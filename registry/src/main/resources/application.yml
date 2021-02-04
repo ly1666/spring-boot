@@ -18,8 +18,4 @@ eureka:
     #服务注册地址
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-security:
-  user:
-    name: user
-    password: 123456
 
