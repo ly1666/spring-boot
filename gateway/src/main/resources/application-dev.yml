@@ -4,22 +4,24 @@ server:
 spring:
   application:
     name: gateway
-  devtools:
-    restart:
-      enabled: true
+
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true #是否与服务发现组件进行结合
+          lower-case-service-id: true
     config:
       enabled: false
       server:
         bootstrap: true
 
 eureka:
+  instance:
+    hostname: 127.0.0.1
+    instance-id: ${spring.application.name}-${server.port}
+    prefer-ip-address: true
+    status-page-url: http://${eureka.instance.hostname}:${server.port}/index
   client: #客户端注册进eureka服务列表内
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka/
-    registerWithEureka: false
-    fetchRegistry: false
