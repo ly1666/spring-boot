@@ -6,15 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="auth-service" />
-        <module name="config" />
         <module name="gateway" />
-        <module name="zipkin" />
-      </profile>
-      <profile name="Annotation profile for spring-boot" enabled="true">
-        <sourceOutputDir name="../../target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../../target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
         <module name="registry" />
       </profile>
     </annotationProcessing>
@@ -22,8 +14,11 @@
       <module name="auth-service" target="1.8" />
       <module name="config" target="1.8" />
       <module name="gateway" target="1.8" />
-      <module name="registry" target="1.5" />
+      <module name="monitor" target="1.5" />
+      <module name="registry" target="1.8" />
       <module name="spring-boot" target="1.8" />
+      <module name="svca-service" target="1.8" />
+      <module name="svcb-service" target="1.8" />
       <module name="zipkin" target="1.8" />
     </bytecodeTargetLevel>
   </component>

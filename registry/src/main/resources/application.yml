@@ -1,17 +1,25 @@
+#配置注册中心1的端口，可以随意设置，不能跟其他端口冲突
 server:
   port: 8761
 
+#配置注册中心1的名字，可以随意起
+spring:
+  application:
+    #通过查看注册中心查看有哪些模块注册进了这个注册中心
+    name: registry
 eureka:
   instance:
-    hostname: registry
-    prefer-ip-address: true
+    hostname: 127.0.0.1
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    # 是否向eureka注册自身服务
+    register-with-eureka: false
+    #是否检索服务
+    fetch-registry: false
+    #服务注册地址
     service-url:
-      defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
-
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 security:
   user:
     name: user
-    password: ${REGISTRY_SERVER_PASSWORD:password}
+    password: 123456
+

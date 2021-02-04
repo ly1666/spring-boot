@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.zhangxd</groupId>
+    <groupId>cn.liuyang</groupId>
     <artifactId>spring-boot</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -18,14 +18,8 @@
     </parent>
 
     <modules>
-        <module>config</module>
         <module>registry</module>
         <module>gateway</module>
-        <module>monitor</module>
-        <module>auth-service</module>
-        <module>svca-service</module>
-        <module>svcb-service</module>
-        <module>zipkin</module>
     </modules>
 
     <properties>
