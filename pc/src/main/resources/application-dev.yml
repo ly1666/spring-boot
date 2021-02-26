@@ -6,3 +6,8 @@ eureka:
 spring:
   application:
     name: pc
+mybatis:
+  configLocation: mybatis/mybatis-config.xml
+  mapperLocations: classpath*:mybatis*/**/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.stdout.StdOutImpl

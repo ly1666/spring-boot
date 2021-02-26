@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ly.dao.UserDao">
+
+    <resultMap id="BASE-RESULT" type="ly.entity.UserEntity">
+        <result property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="password" column="password" />
+        <result property="userId" column="user_id" />
+        <result property="role" column="role" />
+        <result property="del" column="del" />
+    </resultMap>
+
+
+    <insert id="insert" parameterType="ly.entity.UserEntity">
+        INSERT INTO tb_user(
+        id,name,password,user_id,role
+        ) VALUES (
+        #{id},#{name},#{password},#{userId},#{role},#{del}
+        )
+        <selectKey resultType="Integer" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+</mapper>
