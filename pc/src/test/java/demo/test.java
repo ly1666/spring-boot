@@ -4,19 +4,35 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Scanner;
 
+/**
+ * 算法练习
+ */
 public class test {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int i;
-        int k;
-        i = scanner.nextInt();
-        k = scanner.nextInt();
-        System.out.println(i+k);
+        String s;
+        Boolean a = false;
+        s = scanner.nextLine();
+        if (!s.equals("###")) {
+            a = huiwen(s);
+        }
+        System.out.println(a);
     }
     @Test
     public void demo() {
-        System.out.println(sum(1));
+        String s = "abcdef";
+        System.out.println(s.charAt(1));
     }
+    //回文
+    public static Boolean huiwen(String s) {
+        for (int i = 0;i< s.length();i++) {
+            if (s.charAt(i)!=s.charAt(s.length()-1-i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    //1+2+..+100
     public static int sum(int num){
         if(num == 100){
             return 100;
