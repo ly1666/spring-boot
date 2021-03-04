@@ -26,7 +26,7 @@ public class ApplicationTests {
     @Value("${security.user.password}")
     private String password;
 
-    @Test
+    /*@Test
     public void catalogLoads() {
         @SuppressWarnings("rawtypes")
         ResponseEntity<Map> entity =
@@ -44,6 +44,6 @@ public class ApplicationTests {
                         .withBasicAuth(username, password)
                         .getForEntity("/env", Map.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
-    }
+    }*/
 
 }
