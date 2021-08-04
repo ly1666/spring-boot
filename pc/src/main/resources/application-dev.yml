@@ -1,8 +1,9 @@
 server:
   port: 8861
 eureka:
-  client:
-    service-url: http://127.0.0.1:8761/eureka/
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
 spring:
   application:
     name: pc
